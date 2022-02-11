@@ -72,10 +72,10 @@
       "tokenName": "Wrapped HGET"
     },
     {
-      "tokenSymbol": "CREAM",
-      "mintAddress": "5Fu5UUgbjpUvdBveb3a1JTNirL8rXtiYeSMWvKjtUNQv",
-      "tokenName": "Wrapped CREAM",
-      "icon": "https://raw.githubusercontent.com/trustwallet/assets/4c82c2a409f18a4dd96a504f967a55a8fe47026d/blockchains/smartchain/assets/0xd4CB328A82bDf5f03eB737f37Fa6B370aef3e888/logo.png"
+      "tokenSymbol": "1SP",
+      "mintAddress": "2zzC22UBgJGCYPdFyo7GDwz7YHq5SozJc1nnBqLU8oZb",
+      "tokenName": "1SPACE",
+      "icon": "https://1space.me/images/1SP_logo.png"
     },
     {
       "tokenSymbol": "UBXT",
