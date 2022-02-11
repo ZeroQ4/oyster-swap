@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div className="Banner">
         <div className="Banner-description">
-          Swap is unaudited software. Use at your own risk.
+          1Swap is unaudited software. Use at your own risk.
         </div>
       </div>
       <Routes />
