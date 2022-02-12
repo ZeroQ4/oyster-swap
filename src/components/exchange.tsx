@@ -38,7 +38,7 @@ export const ExchangeView = (props: {}) => {
       <div className="App-Bar-right">
         <Button type="text" size="large" style={{ color: "#00b7ff" }}>
           <a
-            href={"/https://1space.me/"}
+            href={"https://1space.me/"}
             target="_blank"
             rel="noopener noreferrer"
           >
