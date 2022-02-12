@@ -37,6 +37,12 @@
       "icon": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x476c5E26a75bd202a9683ffD34359C0CC15be0fF/logo.png"
     },
     {
+      "tokenSymbol": "1SP",
+      "mintAddress": "2zzC22UBgJGCYPdFyo7GDwz7YHq5SozJc1nnBqLU8oZb",
+      "tokenName": "1SPACE",
+      "icon": "https://1space.me/images/1SP_logo.png"
+    },
+    {
       "tokenSymbol": "YFI",
       "mintAddress": "3JSf5tPeuscJGtaCp5giEiDhv51gQ4v3zWg8DGgyLfAB",
       "tokenName": "Wrapped YFI",
@@ -71,12 +77,6 @@
       "mintAddress": "SF3oTvfWzEP3DTwGSvUXRrGTvr75pdZNnBLAH9bzMuX",
       "tokenName": "Wrapped SXP",
       "icon": "https://github.com/trustwallet/assets/raw/b0ab88654fe64848da80d982945e4db06e197d4f/blockchains/ethereum/assets/0x8CE9137d39326AD0cD6491fb5CC0CbA0e089b6A9/logo.png"
-    },
-    {
-      "tokenSymbol": "1SP",
-      "mintAddress": "2zzC22UBgJGCYPdFyo7GDwz7YHq5SozJc1nnBqLU8oZb",
-      "tokenName": "1SPACE",
-      "icon": "https://1space.me/images/1SP_logo.png"
     },
     {
       "tokenSymbol": "BND",
