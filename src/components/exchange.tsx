@@ -14,7 +14,7 @@ export const ExchangeView = (props: {}) => {
   const tabList = [
     {
       key: "trade",
-      tab: <div style={tabStyle}>Trade</div>,
+      tab: <div style={tabStyle}>Swap</div>,
       render: () => {
         return <TradeEntry />;
       },
@@ -36,13 +36,13 @@ export const ExchangeView = (props: {}) => {
         <div className="App-logo" />
       </div>
       <div className="App-Bar-right">
-        <Button type="text" size="large" style={{ color: "#2abdd2" }}>
+        <Button type="text" size="large" style={{ color: "#00b7ff" }}>
           <a
-            href={"https://dex.projectserum.com"}
+            href={"/https://1space.me/"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Trade
+            Invest
           </a>
         </Button>
         <AccountInfo />
@@ -61,7 +61,7 @@ export const ExchangeView = (props: {}) => {
               type="text"
               size="large"
               onClick={connected ? wallet.disconnect : wallet.connect}
-              style={{ color: "#2abdd2" }}
+              style={{ color: "#00b7ff" }}
             >
               Connect
             </Button>
