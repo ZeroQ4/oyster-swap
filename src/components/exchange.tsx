@@ -36,7 +36,7 @@ export const ExchangeView = (props: {}) => {
         <div className="App-logo" />
       </div>
       <div className="App-Bar-right">
-        <Button type="text" size="large" style={{ color: "#00b7ff" }}>
+        <Button type="text" size="large" style={{ color: "#ffffffd9" }}>
           <a
             href={"https://1space.me/"}
             target="_blank"
@@ -61,7 +61,7 @@ export const ExchangeView = (props: {}) => {
               type="text"
               size="large"
               onClick={connected ? wallet.disconnect : wallet.connect}
-              style={{ color: "#00b7ff" }}
+              style={{ color: "#ffffffd9" }}
             >
               Connect
             </Button>
