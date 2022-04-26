@@ -1,4 +1,152 @@
-@import "~antd/dist/antd.css";
+// @import "~antd/dist/antd.css";
 @import "~antd/dist/antd.dark.less";
-@primary-color: #ff00a8;
-@popover-background: #1a2029;
+@primary-color: #00b7ff;
+// @popover-background: #1a2029;
+
+body {
+  .ant-modal-header {
+    background: none;
+  }
+
+  .ant-modal-content {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.05) 52.32%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+    backdrop-filter: blur(40px);
+    border-radius: 16px;
+  }
+
+  .ant-notification-notice {
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.05) 52.32%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+  }
+
+  .ant-notification {
+    .ant-notification-notice-message span {
+      color: rgb(0, 0, 0) !important;
+    }
+    .ant-notification-notice-description span {
+      color: rgb(0, 0, 0) !important;
+    }
+  }
+
+  .ant-dropdown-menu {
+    backdrop-filter: blur(40px);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.05) 52.32%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+  }
+
+  .ant-dropdown-button {
+    .ant-btn-primary {
+      border-radius: 32px;
+    }
+  }
+
+  .ant-btn-group > .ant-btn:first-child:not(:last-child),
+  .ant-btn-group > span:first-child:not(:last-child) > .ant-btn {
+    border-radius: 32px;
+  }
+
+  #root {
+    .App {
+      .ant-card-bordered {
+        border: 1px solid #383a3e;
+      }
+
+      .ant-btn-round {
+        border-radius: 32px;
+      }
+
+      .ant-card {
+        margin: 20px auto 30px;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.04) 0%,
+          rgba(255, 255, 255, 0.02) 52.32%,
+          rgba(255, 255, 255, 0.04) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-sizing: border-box;
+        backdrop-filter: blur(25px);
+        border-radius: 16px;
+      }
+
+      .ant-input-number-handler-wrap {
+        display: none;
+      }
+
+      .ant-btn[disabled],
+      .ant-btn[disabled]:hover,
+      .ant-btn[disabled]:focus,
+      .ant-btn[disabled]:active {
+        border-radius: 32px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+.ant-btn-primary {
+  // background: linear-gradient(45deg, #67b5fd, #8944ef, #5632de);
+  border-radius: 32px;
+  border: 0 none;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -3px;
+    left: 0;
+    height: 110%;
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 50px;
+
+    /* Declaring our shadow color inherit from the parent (button) */
+    background: inherit;
+
+    /* Blurring the element for shadow effect */
+    filter: blur(6px);
+
+    /* Transition for the magic */
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+
+  &:hover::after {
+    /* Changing blur effect */
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+
+    /* And change the style properties */
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+  }
+}

@@ -1,20 +1,340 @@
+.trade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 5px;
+
+  > .hd {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  > .bd {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
 .trade-button {
   width: 100%;
   position: relative;
 
-  :first-child {
-    width: 100%;
-    position: relative;
-  }
+  // :first-child {
+  //   width: 100%;
+  //   position: relative;
+  // }
 }
 
 .trade-spinner {
-  position: absolute;
-  right: 5px;
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  color: #67b5fd !important;
 }
 
 .swap-button {
-  border-radius: 2em;
-  width: 32px;
-  padding-left: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  margin: 5px auto -5px;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #67b5fd;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 52.32%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    border-radius: 40px;
+  }
 }
+
+.swap-button > span {
+  line-height: 1;
+}
+
+.sol-tip {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.split-tip {
+  color: yellow;
+}
+
+.input-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.trade-address-info-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.trade-route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > .hd {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      background: linear-gradient(180deg, #273a5500, #8944ef 50.65%, #273a5500);
+      // background: linear-gradient(45deg, #67b5fd, #8944ef, #5632de);
+      top: 0;
+      bottom: 0;
+      right: -1px;
+    }
+  }
+
+  > .bd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    // min-width: 45vw;
+
+    .token-route {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      flex-grow: 1;
+      border: 1px solid #383a3e;
+      border-radius: 16px;
+      padding: 10px;
+      background: #11131b;
+    }
+
+    .market-route {
+      width: 100%;
+    }
+
+    .pool {
+      border-radius: 10px;
+      padding: 5px 10px;
+      text-align: left;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 0%,
+        rgba(255, 255, 255, 0.02) 52.32%,
+        rgba(255, 255, 255, 0.04) 100%
+      );
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-sizing: border-box;
+      border-radius: 5px;
+
+      .name {
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 5px;
+        font-weight: 500;
+
+        @media only screen and (max-width: 600px) {
+          text-align: center;
+        }
+      }
+
+      .amount {
+        color: #617089;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media only screen and (max-width: 600px) {
+          flex-direction: column;
+        }
+      }
+
+      .anticon {
+        margin: 0 5px;
+
+        @media only screen and (max-width: 600px) {
+          transform: rotate(90deg);
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+
+  > .ft {
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      // background: linear-gradient(180deg, #273a5500, #273a55 50.65%, #273a5500);
+      background: linear-gradient(180deg, #273a5500, #8944ef 50.65%, #273a5500);
+      top: 0;
+      bottom: 0;
+      left: -1px;
+    }
+  }
+}
+
+.mod-results {
+  margin-top: -40px;
+  padding: 25px 20px 10px;
+  background: #090f28;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border-top: none;
+}
+
+.mod-result {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 12px;
+  margin: 15px 0 0;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.02) 52.32%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #617089;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &.active {
+    color: #fff;
+    border: 1px solid #00b7ff;
+  }
+
+  > .ft {
+    position: absolute;
+    display: block;
+    font-size: 11px;
+    background: #00b7ff;
+    color: #fff;
+    padding: 0px 5px;
+    border-radius: 10px 10px 0px 10px;
+    position: absolute;
+    right: -1px;
+    top: -10px;
+    z-index: 1;
+  }
+
+  .number {
+    text-align: right;
+  }
+
+  .route {
+    font-size: 11px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 5px;
+  }
+}
+
+.refresh-btn {
+  transform: rotate(0deg);
+}
+
+.loading {
+  transform: rotate(0deg);
+  animation: rotation 1s 1s infinite linear;
+}
+
+.timeout {
+  transform: rotate(0deg);
+  animation: rotation 9s 1s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.twitter-share {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  .mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  > .bd {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 15;
+  }
+
+  .btn-close {
+    border: 0 none;
+    cursor: pointer;
+  }
+
+  .in {
+    width: 80vw;
+    height: 40vw;
+    // background: url('../../assets/tweet-bg.png') no-repeat left top;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+
+    .text {
+      padding: 0 20px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 80vw;
+      height: 160vw;
+      // background: url('../../assets/mobile-tweet-bg.png') no-repeat left top;
+      background-size: cover;
+      padding: 0 10vw;
+    }
+  }
+}
+
