@@ -5,7 +5,7 @@ import {
   useConnectionConfig,
   useSlippageConfig,
 } from "../../utils/connection";
-import { useWallet } from "../../utils/wallet";
+import { useWallet } from "../../context/wallet";
 import { CurrencyInput } from "../currencyInput";
 import { LoadingOutlined } from "@ant-design/icons";
 import { swap, usePoolForBasket } from "../../utils/pools";
@@ -75,7 +75,7 @@ export const TradeEntry = () => {
     <>
       <div>
         <CurrencyInput
-          title="Input"
+          title="From"
           onInputChange={(val: any) => {
             if (A.amount !== val) {
               setLastTypedAccount(A.mintAddress);
@@ -93,7 +93,7 @@ export const TradeEntry = () => {
           ⇅
         </Button>
         <CurrencyInput
-          title="To (Estimate)"
+          title="To"
           onInputChange={(val: any) => {
             if (B.amount !== val) {
               setLastTypedAccount(B.mintAddress);
@@ -113,7 +113,7 @@ export const TradeEntry = () => {
         type="primary"
         size="large"
         onClick={connected ? handleSwap : wallet.connect}
-        style={{ width: "100%" }}
+        style={{ width: "93%" }}
         disabled={
           connected &&
           (pendingTx ||

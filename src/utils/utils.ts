@@ -55,7 +55,7 @@ export function useLocalStorageState(key: string, defaultState?: string) {
 
 // shorten the checksummed version of the input address to have 0x + 4 characters at start and end
 export function shortenAddress(address: string, chars = 4): string {
-  return `0x${address.substring(0, chars)}...${address.substring(44 - chars)}`;
+  return `${address.substring(0, chars)}...${address.substring(44 - chars)}`;
 }
 
 export function getTokenName(env: ENV, mintAddress: string): string {

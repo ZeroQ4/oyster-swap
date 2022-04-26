@@ -52,16 +52,22 @@ export const CurrencyInput = (props: {
 
   // TODO: expand nested pool names ...?
 
-  // group accounts by mint and use one with biggest balance
-  const grouppedUserAccounts = userAccounts
-    .sort((a, b) => {
-      return b.info.amount.toNumber() - a.info.amount.toNumber();
-    })
-    .reduce((map, acc) => {
-      const mint = acc.info.mint.toBase58();
-      if (isKnownMint(env, mint)) {
-        return map;
-      }
+      // group accounts by mint and use one with biggest balance
+      const grouppedUserAccounts = userAccounts
+      .sort((a, b) => {
+        return b.info.amount.gt(a.info.amount) ? 1 : -1;
+      })
+      .reduce((map, acc) => {
+        const mint = acc.info.mint.toBase58();
+        if (isKnownMint(env, mint)) {
+          return map;
+        }
+
+  
+
+
+
+
 
       const pool = pools.find((p) => p && p.pubkeys.mint.toBase58() === mint);
 
@@ -141,7 +147,7 @@ export const CurrencyInput = (props: {
             props.onInputChange && props.onInputChange(userUiBalance())
           }
         >
-          Balance: {userUiBalance().toFixed(6)}
+          {userUiBalance().toFixed(6)}
         </div>
       </div>
       <div className="ccy-input-header" style={{ padding: "0px 10px 5px 7px" }}>

@@ -1,20 +1,91 @@
-@import "~antd/dist/antd.dark.less";
+@import "~antd/dist/antd.less";
 @import "./ant-custom.less";
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
 body {
-  background-color: #1f2b3a;
+  height: auto;
+  background-color: #090f29;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --row-highlight: @background-color-base;
+  background: radial-gradient(
+    circle farthest-side at top center,
+    #213642 0%,
+    #121429 50%
+  );
+  min-height: 100vh;
+
+  iframe {
+    display: none;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    transform: scale(0.9);
+  }
+
+  25% {
+    transform: scale(1.0);
+  }
+
+  60% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.g-loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.g-loading-logo {
+  width: 70px;
+  // animation: rotation 2s infinite linear;
+  animation: breathing 1.5s ease-out infinite normal;
 }
 
 .App-logo {
   background-image: url("https://raw.githubusercontent.com/ZeroQ4/oyster-swap/master/public/logo1sp1.png");
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
   height: 40px;
-  width: 28px;
 }
 
 .Banner {
   min-height: 30px;
   width: 100%;
-  background-color: #000000;
+  background-color: #fff704;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +93,7 @@ body {
 }
 
 .Banner-description {
-  color: rgb(0, 0, 0);
+  color: black;
   text-align: center;
   width: 100%;
 }
@@ -40,6 +111,63 @@ body {
   position: relative;
   padding: 1rem;
   z-index: 2;
+
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+    @media only screen and (max-width: 600px) {
+      padding: 0;
+    }
+  }
+
+  .ant-menu-horizontal {
+    border-bottom-color: transparent;
+    background-color: transparent;
+    line-height: inherit;
+    font-size: 16px;
+    margin: 0 20px;
+
+    .ant-menu-item {
+      margin: 0 10px;
+      color: lightgrey;
+      height: 35px;
+      line-height: 35px;
+      border-width: 0px !important;
+
+      @media only screen and (max-width: 600px) {
+        opacity: 0;
+        order: 0;
+        height: 0px;
+        overflow-y: hidden;
+        pointer-events: none;
+        position: absolute;
+      }
+    }
+
+    .ant-menu-item:hover {
+      color: white;
+      border-width: 0px !important;
+    }
+
+    .ant-menu-item-selected {
+      font-weight: bold;
+    }
+
+    .ant-menu-overflow-item-rest {
+      @media only screen and (max-width: 600px) {
+        opacity: 1 !important;
+        order: -1 !important;
+        position: relative !important;
+      }
+    }
+
+    .ant-menu-item-active {
+      color: #00b7ff !important;
+
+      a {
+        color: #00b7ff !important;
+      }
+    }
+  }
 }
 
 .App-Bar-left {
@@ -133,9 +261,10 @@ body {
 
 .exchange-card {
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
-  width: 450px;
-  margin: 4px auto;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 30px 0px;
+  // width: 550px;
+  width: 400px;
+  margin: 40px auto 0;
   padding: 0px;
 
   .ant-tabs-tab {
@@ -154,8 +283,82 @@ body {
   }
 }
 
+.flash-positive {
+  color: rgba(0, 255, 0, 0.6);
+}
+
+.flash-negative {
+  color: rgba(255, 0, 0, 0.6);
+}
+
+.ant-table-cell {
+  padding: 6px 16px !important;
+}
+
+.ant-table {
+  margin: 0px 30px;
+}
+
+.ant-pagination-options {
+  display: none;
+}
+
+.ant-table-container table > thead > tr th {
+  text-align: center;
+}
+
+.ant-notification {
+  a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .exchange-card {
     width: 360px;
   }
+}
+
+.custom-btn {
+  background: #00ffa3;
+  // box-shadow: 0 8px 8px 0 rgb(0 0 0 / 15%);
+  border-radius: 8px;
+  color: #000;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 2px;
+  font-weight: 300;
+  padding: 25px 40px;
+  border: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  &.purple-btn {
+    color: #fff;
+    background: #aa52ea;
+    background: linear-gradient(180deg, #aa52ea, #cb30f8);
+    transition: none;
+  }
+
+  &.purple-btn-outline {
+    color: #fff;
+    background: #0000;
+    border: 2px solid #cb30f8;
+    padding: 23px 40px;
+  }
+}
+
+.ant-input[disabled],
+.ant-input-disabled {
+  background: none;
+}
+
+.airdrop-card,
+.staking-card {
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 30px 0px;
 }

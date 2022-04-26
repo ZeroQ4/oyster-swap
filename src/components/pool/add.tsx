@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addLiquidity, usePoolForBasket } from "../../utils/pools";
 import { Button, Dropdown, Popover } from "antd";
-import { useWallet } from "../../utils/wallet";
+import { useWallet } from "../../context/wallet";
 import {
   useConnection,
   useConnectionConfig,
